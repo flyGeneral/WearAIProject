@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "WearAIProject"
 include ':app'
+include ':common'
+include ':sceneview'
