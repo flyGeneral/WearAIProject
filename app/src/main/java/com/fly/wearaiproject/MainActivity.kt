@@ -21,6 +21,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -51,7 +52,10 @@ class MainActivity : ComponentActivity() {
 //            insets
 //        }
 
-        setContent {
+        setContentView(R.layout.activity_main)
+
+        val composeSceneContainer = findViewById<ComposeView>(R.id.composeSceneContainer)
+        composeSceneContainer.setContent {
             SceneviewTheme {
                 Box(modifier = Modifier.fillMaxSize()) {
                     val engine = rememberEngine()
@@ -61,7 +65,7 @@ class MainActivity : ComponentActivity() {
                     val centerNode = rememberNode(engine)
 
                     val cameraNode = rememberCameraNode(engine) {
-                        position = Position(y = -0.5f, z = 2.0f)
+                        position = Position(y = 0f, z = 2.0f)
                         lookAt(centerNode)
                         centerNode.addChildNode(this)
                     }
@@ -140,5 +144,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
     }
 }
