@@ -56,6 +56,7 @@ class MainActivity : ComponentActivity() {
 
         val composeSceneContainer = findViewById<ComposeView>(R.id.composeSceneContainer)
         composeSceneContainer.setContent {
+            @OptIn(ExperimentalMaterial3Api::class)
             SceneviewTheme {
                 Box(modifier = Modifier.fillMaxSize()) {
                     val engine = rememberEngine()
@@ -129,18 +130,18 @@ class MainActivity : ComponentActivity() {
 //                        contentDescription = "Logo"
 //                    )
 
-//                    TopAppBar(
-//                        title = {
-//                            Text(
-//                                text = stringResource(id = R.string.app_name)
-//                            )
-//                        },
-//                        colors = TopAppBarDefaults.topAppBarColors(
-//                            containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
-//                            titleContentColor = MaterialTheme.colorScheme.onPrimary
-//
-//                        )
-//                    )
+                    TopAppBar(
+                        title = {
+                            Text(
+                                text = stringResource(id = R.string.app_name)
+                            )
+                        },
+                        colors = TopAppBarDefaults.topAppBarColors(
+                            containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
+                            titleContentColor = MaterialTheme.colorScheme.onPrimary
+
+                        )
+                    )
                 }
             }
         }
