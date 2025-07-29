@@ -95,11 +95,11 @@ class MainActivity : ComponentActivity() {
                                     modelInstance = modelLoader.createModelInstance(
                                         assetFileLocation = "models/jiaherenwa.glb"
                                     ),
-                                    scaleToUnits = 0.75f
+                                    scaleToUnits = 1.3f
                                 )
                             }),
                         environment = environmentLoader.createHDREnvironment(
-                            assetFileLocation = "environments/sky_2k.hdr"
+                            assetFileLocation = "environments/clear_puresky_1k.hdr"
                         )!!,
 //                        onFrame = {
 //                            centerNode.rotation = cameraRotation
@@ -130,18 +130,18 @@ class MainActivity : ComponentActivity() {
 //                        contentDescription = "Logo"
 //                    )
 
-                    TopAppBar(
-                        title = {
-                            Text(
-                                text = stringResource(id = R.string.app_name)
-                            )
-                        },
-                        colors = TopAppBarDefaults.topAppBarColors(
-                            containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
-                            titleContentColor = MaterialTheme.colorScheme.onPrimary
-
-                        )
-                    )
+//                    TopAppBar(
+//                        title = {
+//                            Text(
+//                                text = stringResource(id = R.string.app_name)
+//                            )
+//                        },
+//                        colors = TopAppBarDefaults.topAppBarColors(
+//                            containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
+//                            titleContentColor = MaterialTheme.colorScheme.onPrimary
+//
+//                        )
+//                    )
                 }
             }
         }

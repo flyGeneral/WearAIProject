@@ -5,5 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.WearAIProject" parent="Base.Theme.WearAIProject" />
+    <style name="Theme.WearAIProject" parent="Base.Theme.WearAIProject" >
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
