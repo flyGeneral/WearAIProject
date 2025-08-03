@@ -29,3 +29,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin-compose" }
 maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+android-library = { id = "com.android.library", version.ref = "agp" }

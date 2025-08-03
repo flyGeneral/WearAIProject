@@ -57,6 +57,8 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:1.7.8"
 
     implementation project(":common")
+    implementation project(":CameraModules")
+
     // SceneView
     releaseImplementation "io.github.sceneview:sceneview:2.3.0"
     debugImplementation project(":sceneview")

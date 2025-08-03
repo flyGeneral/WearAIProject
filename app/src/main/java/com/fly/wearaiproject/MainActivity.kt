@@ -1,6 +1,9 @@
 package com.fly.wearaiproject
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.core.infiniteRepeatable
@@ -25,7 +28,10 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.fly.cameramodules.CameraActivity
+import com.fly.wearaiproject.R.id.btn_start_camera
 import io.github.sceneview.Scene
+import io.github.sceneview.SceneView
 import io.github.sceneview.animation.Transition.animateRotation
 import io.github.sceneview.math.Position
 import io.github.sceneview.math.Rotation
@@ -42,6 +48,9 @@ import kotlin.time.Duration.Companion.seconds
 import kotlin.time.DurationUnit.MILLISECONDS
 
 class MainActivity : ComponentActivity() {
+
+    private lateinit var startCamera: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        enableEdgeToEdge()
@@ -53,6 +62,12 @@ class MainActivity : ComponentActivity() {
 //        }
 
         setContentView(R.layout.activity_main)
+
+        startCamera = findViewById<Button>(R.id.btn_start_camera)
+        startCamera.setOnClickListener(View.OnClickListener {
+            val camera_intent = Intent(this, CameraActivity::class.java)
+            startActivity(camera_intent)
+        })
 
         val composeSceneContainer = findViewById<ComposeView>(R.id.composeSceneContainer)
         composeSceneContainer.setContent {
